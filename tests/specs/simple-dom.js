@@ -20,14 +20,6 @@ describe('simpleDOM', function () {
             expect(simpleDOM.nodes).toEqual(jasmine.any(Object));
         });
 
-        it('helpers is define', function () {
-            expect(simpleDOM.helpers).toBeDefined();
-        });
-
-        it('helpers is object', function () {
-            expect(simpleDOM.helpers).toEqual(jasmine.any(Object));
-        });
-
         it('parse is define', function () {
             expect(simpleDOM.parse).toBeDefined();
         });

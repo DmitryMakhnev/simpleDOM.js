@@ -5,7 +5,6 @@
  * */
 
 var simpleDOMNodes = require('./nodes');
-var simpleDOMHelpers = require('./helpers');
 var reversiveCycle = require('default-lib').reversiveCycle;
 
 /*@defaultTesting.exports*/
@@ -269,7 +268,7 @@ function buildText (contextOfParse) {
     if (contextOfParse.textBuffer) {
         contextOfParseTreeStack = contextOfParse.treeStack;
         newText = new simpleDOMNodes.Text(contextOfParse.textBuffer);
-        simpleDOMHelpers.appendChild(contextOfParseTreeStack[contextOfParseTreeStack.length - 1], newText);
+        contextOfParseTreeStack[contextOfParseTreeStack.length - 1].appendChild(newText);
         contextOfParse.textBuffer = '';
     }
     contextOfParse.buffer = '';
@@ -290,7 +289,7 @@ function buildTag (contextOfParse , isClosedTag) {
 
     newTag = new simpleDOMNodes.Tag(tagName, contextOfParse.attributes);
 
-    simpleDOMHelpers.appendChild(contextOfParseTreeStack[contextOfParseTreeStack.length - 1], newTag);
+    contextOfParseTreeStack[contextOfParseTreeStack.length - 1].appendChild(newTag);
 
     if (
         !isClosedTag
@@ -305,7 +304,7 @@ function buildTag (contextOfParse , isClosedTag) {
 
 
 function closeTagNotClosedTagsCollectionProcessing (notClosedTag, index, notClosedTagsCollection, lastTreeStackTag) {
-    simpleDOMHelpers.appendChild(lastTreeStackTag, notClosedTag);
+    lastTreeStackTag.appendChild(notClosedTag);
 }
 
 /**
@@ -357,10 +356,7 @@ function buildComment (contextOfParse) {
 
     newComment = new simpleDOMNodes.Comment(contextOfParse.commentBuffer);
 
-    simpleDOMHelpers.appendChild(
-        contextOfParseTreeStack[contextOfParseTreeStack.length - 1],
-        newComment
-    );
+    contextOfParseTreeStack[contextOfParseTreeStack.length - 1].appendChild(newComment);
 
     contextOfParse.state = TEXT;
 }
@@ -824,7 +820,7 @@ processingsExport.processingResultState = processingResultState;
 /**
  *
  * @param {String} xml
- * @return {Object} ast
+ * @return {Object} simpleDOM
  */
 module.exports = function (xml) {
     var contextOfParse = new ContextOfParse(),

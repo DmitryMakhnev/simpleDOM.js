@@ -1,6 +1,5 @@
 describe('closeTag (defaultTesting.exports.simpleDOM.parse.builders)', function () {
     var simpleDOMNodes = require('simple-dom').nodes;
-    var simpleDOMHelpers = require('simple-dom').helpers;
     var parseExports = require('default-testing').exports.simpleDOM.parse;
     var statesExports = parseExports.states;
     var ContextOfParse = parseExports.ContextOfParse;
@@ -19,7 +18,7 @@ describe('closeTag (defaultTesting.exports.simpleDOM.parse.builders)', function 
 
         var tag = new simpleDOMNodes.Tag('div'),
             treeStack = contextOfParse.treeStack;
-        simpleDOMHelpers.appendChild(treeStack[treeStack.length - 1], tag);
+        treeStack[treeStack.length - 1].appendChild(tag);
         treeStack.push(tag);
 
         closeTag(contextOfParse);
@@ -77,11 +76,11 @@ describe('closeTag (defaultTesting.exports.simpleDOM.parse.builders)', function 
         var treeStack = contextOfParse.treeStack;
 
         var div = new simpleDOMNodes.Tag('div');
-        simpleDOMHelpers.appendChild(treeStack[treeStack.length - 1], div);
+        treeStack[treeStack.length - 1].appendChild(div);
         treeStack.push(div);
 
         var span = new simpleDOMNodes.Tag('span');
-        simpleDOMHelpers.appendChild(treeStack[treeStack.length - 1], span);
+        treeStack[treeStack.length - 1].appendChild(span);
         treeStack.push(span);
 
         closeTag(contextOfParse);

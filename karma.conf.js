@@ -19,7 +19,6 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
             'tests/specs/simple-dom.js',
-            'tests/specs/modules/helpers.js',
             'tests/specs/modules/nodes.js',
             'tests/specs/modules/parse/parse.js',
             'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/defaultTesting.exports.simpleDOM.parse.js',
@@ -38,7 +37,6 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             'tests/specs/simple-dom.js': ['webpack', 'sourcemap'],
-            'tests/specs/modules/helpers.js': ['webpack', 'sourcemap'],
             'tests/specs/modules/nodes.js': ['webpack', 'sourcemap'],
             'tests/specs/modules/parse/parse.js': ['webpack', 'sourcemap'],
             'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/defaultTesting.exports.simpleDOM.parse.js': ['webpack', 'sourcemap'],

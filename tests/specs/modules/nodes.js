@@ -31,6 +31,22 @@ describe('simpleDOM.nodes', function () {
             expect(fragment.childNodes).toEqual(jasmine.any(Array));
         });
 
+        it('appendChild is defined', function () {
+            expect(fragment.appendChild).toBeDefined();
+        });
+
+        it('appendChild is function', function () {
+            expect(fragment.appendChild).toEqual(jasmine.any(Function));
+        });
+
+        it('removeChild is defined', function () {
+            expect(fragment.removeChild).toBeDefined();
+        });
+
+        it('removeChild is function', function () {
+            expect(fragment.removeChild).toEqual(jasmine.any(Function));
+        });
+
     });
 
 
@@ -85,6 +101,22 @@ describe('simpleDOM.nodes', function () {
 
         it('parentNode is null', function () {
             expect(tag.parentNode).toBeNull();
+        });
+
+        it('appendChild is defined', function () {
+            expect(tag.appendChild).toBeDefined();
+        });
+
+        it('appendChild is function', function () {
+            expect(tag.appendChild).toEqual(jasmine.any(Function));
+        });
+
+        it('removeChild is defined', function () {
+            expect(tag.removeChild).toBeDefined();
+        });
+
+        it('removeChild is function', function () {
+            expect(tag.removeChild).toEqual(jasmine.any(Function));
         });
     });
 
@@ -164,6 +196,118 @@ describe('simpleDOM.nodes', function () {
 
         it('parentNode is null', function () {
             expect(comment.parentNode).toBeNull();
+        });
+
+    });
+
+    describe('appendChild()', function () {
+
+        describe('appendChild() div into fragment', function () {
+            var fragment = new simpleDOMNodes.Fragment(),
+                div = new simpleDOMNodes.Tag('div', {'class': 'block'});
+
+            fragment.appendChild(div);
+            it('correct div position', function () {
+                expect(fragment.childNodes[0]).toBe(div);
+            });
+            it('div.parentNode is fragment', function () {
+                expect(div.parentNode).toBe(fragment);
+            });
+
+        });
+
+        describe('appendChild() reappend div', function () {
+            var div = new simpleDOMNodes.Tag('div'),
+                div2 = new simpleDOMNodes.Tag('div'),
+                fragment = new simpleDOMNodes.Fragment();
+
+            div2.appendChild(div);
+            fragment.appendChild(div);
+
+            it('div correct parent node', function () {
+                expect(div.parentNode).toBe(fragment);
+            });
+
+            it('div2.childNodes is correct', function () {
+                expect(div2.childNodes.length).toBe(0);
+            });
+
+        });
+
+        describe('appendChild() for fragment', function () {
+            var div = new simpleDOMNodes.Tag('div'),
+                div2 = new simpleDOMNodes.Tag('div'),
+                div3 = new simpleDOMNodes.Tag('div'),
+                fragment = new simpleDOMNodes.Fragment();
+
+            fragment.appendChild(div2);
+            fragment.appendChild(div3);
+            div.appendChild(fragment);
+
+            it('div.childNodes length is correct', function () {
+                expect(div.childNodes.length).toBe(2);
+            });
+
+            it('div2.parentNode is div', function () {
+                expect(div2.parentNode).toBe(div);
+            });
+
+            it('div3.parentNode is div', function () {
+                expect(div3.parentNode).toBe(div);
+            });
+
+            it('fragment.childNodes is empty', function () {
+                expect(fragment.childNodes.length).toBe(0);
+            });
+        });
+
+    });
+
+    describe('removeChild()', function () {
+
+        describe('simple remove', function () {
+            var div = new simpleDOMNodes.Tag('div'),
+                div2 = new simpleDOMNodes.Tag('div');
+
+            div.appendChild(div2);
+            div.removeChild(div2);
+
+            it('div.childNodes is empty', function () {
+                expect(div.childNodes.length).toBe(0);
+            });
+
+            it('div2.parentNode is null', function () {
+                expect(div2.parentNode).toBeNull();
+            });
+        });
+
+        describe('remove second of three nodes', function () {
+            var div = new simpleDOMNodes.Tag('div'),
+                div1 = new simpleDOMNodes.Tag('div'),
+                div2 = new simpleDOMNodes.Tag('div'),
+                div3 = new simpleDOMNodes.Tag('div');
+
+            div.appendChild(div1);
+            div.appendChild(div2);
+            div.appendChild(div3);
+            div.removeChild(div2);
+
+            it('div.childNodes length is 2', function () {
+                expect(div.childNodes.length).toBe(2);
+            });
+
+            it('div.childNodes[0] is div1', function () {
+                expect(div.childNodes[0]).toBe(div1);
+            });
+
+            it('div.childNodes[1] is div3', function () {
+                expect(div.childNodes[1]).toBe(div3);
+            });
+
+            it('div2.parentNode is null', function () {
+                expect(div2.parentNode).toBeNull();
+            });
+
         });
 
     });
