@@ -13,9 +13,6 @@ module.exports = {
         library: 'simpleDOM'
     },
 
-    externals: {
-        simpleDOM: 'simpleDOM'
-    },
 
     module: {
         loaders: [
@@ -41,7 +38,8 @@ module.exports = {
     plugins: [
         new webpack.ResolverPlugin(
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-        ),
-        new webpack.optimize.UglifyJsPlugin()
+        )
+        //,
+        //new webpack.optimize.UglifyJsPlugin()
     ]
 };

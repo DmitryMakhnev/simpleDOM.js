@@ -20,12 +20,19 @@ module.exports = function (config) {
         files: [
             'tests/specs/simple-dom.js',
             'tests/specs/modules/nodes.js',
-            'tests/specs/modules/parse/parse.js',
-            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/defaultTesting.exports.simpleDOM.parse.js',
-            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/contextOfParse.js',
-            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/microhelpers/**/*.js',
-            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/builders/**/*.js',
-            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/processings/**/*.js'
+            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/'
+                + 'defaultTesting.exports.simpleDOM.parse.js',
+            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/'
+                + 'contextOfParse.js',
+            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/'
+                + 'microhelpers/**/*.js',
+            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/'
+                + 'builders/**/*.js',
+            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/'
+                + 'processings/**/*.js',
+            'tests/specs/modules/parse/parse.js'
+            //,
+            //'tests/specs/modules/selectors/parseSelector.js'
         ],
 
 
@@ -38,12 +45,14 @@ module.exports = function (config) {
         preprocessors: {
             'tests/specs/simple-dom.js': ['webpack', 'sourcemap'],
             'tests/specs/modules/nodes.js': ['webpack', 'sourcemap'],
-            'tests/specs/modules/parse/parse.js': ['webpack', 'sourcemap'],
             'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/defaultTesting.exports.simpleDOM.parse.js': ['webpack', 'sourcemap'],
             'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/contextOfParse.js': ['webpack', 'sourcemap'],
             'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/microhelpers/**/*.js': ['webpack', 'sourcemap'],
             'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/builders/**/*.js': ['webpack', 'sourcemap'],
-            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/processings/**/*.js': ['webpack', 'sourcemap']
+            'tests/specs/modules/parse/defaultTesting.exports.simpleDOM.parse/processings/**/*.js': ['webpack', 'sourcemap'],
+            'tests/specs/modules/parse/parse.js': ['webpack', 'sourcemap']
+            //,
+            //'tests/specs/modules/selectors/parseSelector.js': ['webpack', 'sourcemap']
         },
 
         webpack: {

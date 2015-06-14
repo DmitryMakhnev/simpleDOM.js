@@ -7,11 +7,11 @@
 var simpleDOMNodes = require('./nodes');
 var reversiveCycle = require('default-lib').reversiveCycle;
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 var defaultTesting = require('default-testing');
 var getObjectSafely = require('default-lib').getObjectSafely;
 var parseExports = getObjectSafely(defaultTesting.exports, 'simpleDOM').parse = {};
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 //
 // states
@@ -41,7 +41,7 @@ var stateId = 0,
     COMMENT_END = stateId++,
     COMMENT_CLOSE = stateId++;
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 parseExports.states = {
     TEXT: TEXT,
 
@@ -66,7 +66,7 @@ parseExports.states = {
     COMMENT_END: COMMENT_END,
     COMMENT_CLOSE: COMMENT_CLOSE
 };
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 //
 // /states
@@ -131,9 +131,9 @@ ContextOfParse.prototype.destructor = function () {
     contextOfParse.commentToken = null;
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 parseExports.ContextOfParse = ContextOfParse;
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 //
 // /ContextOfParse
@@ -156,7 +156,7 @@ function isCorrectTagNameStartSymbol (char) {
 }
 
 
-var tagNameCorrectSymbolRegExp = /\w|-/;
+var tagNameCorrectSymbolRegExp = /\w|-|:/;
 
 /**
  *
@@ -233,7 +233,7 @@ function addAttribute (contextOfParse, attributeValue) {
 }
 
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 
 var microhelpersExports = parseExports.microehelpers = {};
 
@@ -247,7 +247,7 @@ microhelpersExports.addCharForBuffer = addCharForBuffer;
 microhelpersExports.clearForTextState = clearForTextState;
 microhelpersExports.addAttribute = addAttribute;
 
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 //
 // /microhelpers
@@ -361,7 +361,7 @@ function buildComment (contextOfParse) {
     contextOfParse.state = TEXT;
 }
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 
 var buildersExports = parseExports.builders = {};
 buildersExports.buildText = buildText;
@@ -369,7 +369,7 @@ buildersExports.buildTag = buildTag;
 buildersExports.closeTag = closeTag;
 buildersExports.buildComment = buildComment;
 
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 
 
@@ -385,11 +385,11 @@ buildersExports.buildComment = buildComment;
 
 var processings = [];
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 
 var processingsExport = parseExports.processings = {};
 
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -408,9 +408,9 @@ processings[TEXT] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingText = processings[TEXT];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -438,9 +438,9 @@ processings[TAG_START] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingTagStart = processings[TAG_START];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -470,9 +470,9 @@ processings[TAG_NAME] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingTagName = processings[TAG_NAME];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -502,9 +502,9 @@ processings[TAG_BODY] = function (contextOfParse, char) {
 
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingTagBody = processings[TAG_BODY];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -538,9 +538,9 @@ processings[TAG_ATTRIBUTE_NAME] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingTagAttributeName = processings[TAG_ATTRIBUTE_NAME];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -562,9 +562,9 @@ processings[TAG_ATTRIBUTE_TO_VALUE] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingTagAttributeToValue = processings[TAG_ATTRIBUTE_TO_VALUE];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -582,9 +582,9 @@ processings[TAG_ATTRIBUTE_VALUE] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingTagAttributeValue = processings[TAG_ATTRIBUTE_VALUE];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -611,9 +611,9 @@ processings[TAG_ATTRIBUTE_VALUE_END] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingAttributeValueEnd = processings[TAG_ATTRIBUTE_VALUE_END];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -629,9 +629,9 @@ processings[TAG_CLOSE] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingTagClose = processings[TAG_CLOSE];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -649,9 +649,9 @@ processings[CLOSED_TAG_START] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingClosedTagStart = processings[CLOSED_TAG_START];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -672,9 +672,9 @@ processings[CLOSED_TAG_NAME] = function processingClosedTagName (contextOfParse,
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingClosedTagName = processings[CLOSED_TAG_NAME];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -691,9 +691,9 @@ processings[CLOSED_TAG_BODY] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingClosedTagBody = processings[CLOSED_TAG_BODY];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -710,9 +710,9 @@ processings[DECLARATION_START] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingDeclarationStart = processings[DECLARATION_START];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -731,9 +731,9 @@ processings[COMMENT_START] = function (contextOfParse, char) {
 
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingCommentStart = processings[COMMENT_START];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 
 /**
@@ -752,9 +752,9 @@ processings[COMMENT_BODY] = function (contextOfParse, char) {
     }
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingCommentBody = processings[COMMENT_BODY];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 /**
  *
@@ -774,9 +774,9 @@ processings[COMMENT_END] = function (contextOfParse, char) {
 
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingCommentEnd = processings[COMMENT_END];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 
 /**
@@ -796,9 +796,9 @@ processings[COMMENT_CLOSE] = function processingCommentClose (contextOfParse, ch
 
 };
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingCommentClose = processings[COMMENT_CLOSE];
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 function processingResultState (contextOfParse) {
     if (contextOfParse.buffer !== '') {
@@ -807,9 +807,9 @@ function processingResultState (contextOfParse) {
     }
 }
 
-/*@defaultTesting.exports*/
+/*@DTesting.exports*/
 processingsExport.processingResultState = processingResultState;
-/*@/defaultTesting.exports*/
+/*@/DTesting.exports*/
 
 //
 // /processings
@@ -823,10 +823,10 @@ processingsExport.processingResultState = processingResultState;
  * @return {Object} simpleDOM
  */
 module.exports = function (xml) {
-    var contextOfParse = new ContextOfParse(),
-        i = 0,
-        iMax = xml.length,
-        result;
+    var contextOfParse = new ContextOfParse();
+    var i = 0;
+    var iMax = xml.length;
+    var result;
 
     //Info Comment [dmitry.makhnev] use native cycle because this is bottleneck
     for (; i < iMax; i += 1) {
