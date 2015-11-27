@@ -1,7 +1,7 @@
 {
   "name": "simple-dom-parser",
   "description": "XML/HTML parser. It parses XML or HTML to simple js objects with micro DOM API",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "./src/simple-dom-parser.js",
   "dist": "./dist/",
   "license": "MIT",
