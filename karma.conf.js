@@ -1,14 +1,14 @@
 // Karma configuration
 // Generated on Sun Jan 25 2015 20:54:07 GMT+0300 (MSK)
 
-var path = require("path");
-var webpack = require("webpack");
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = function (config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '',
+        basePath: './',
 
 
         // frameworks to use
