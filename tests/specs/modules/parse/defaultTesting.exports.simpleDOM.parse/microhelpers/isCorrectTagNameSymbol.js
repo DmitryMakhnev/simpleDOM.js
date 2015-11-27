@@ -1,5 +1,5 @@
 describe('isCorrectTagNameSymbol (defaultTesting.exports.simpleDOM.parse.microhelpers)', function () {
-    var simpleDOMNodes = require('simple-dom');
+    var simpleDOMNodes = require('simple-dom-parser');
     var parseExports = require('default-testing').exports.simpleDOM.parse;
     var isCorrectTagNameSymbol = parseExports.microehelpers.isCorrectTagNameSymbol;
 

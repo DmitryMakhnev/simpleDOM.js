@@ -1,4 +1,4 @@
-var parseSelector = require('simple-dom').parseSelector;
+var parseSelector = require('simple-dom-parser').parseSelector;
 
 
 var defaultTesting = require('default-testing');

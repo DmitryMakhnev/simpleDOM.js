@@ -1,4 +1,4 @@
-var simpleDOM = require('simple-dom');
+var simpleDOM = require('simple-dom-parser');
 
 describe('simpleDOM', function () {
 

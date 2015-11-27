@@ -1,5 +1,5 @@
 describe('processingDeclarationStart (defaultTesting.exports.simpleDOM.parse.processings)', function () {
-    var simpleDOMNodes = require('simple-dom').nodes;
+    var simpleDOMNodes = require('simple-dom-parser').nodes;
     var parseExports = require('default-testing').exports.simpleDOM.parse;
     var statesExports = parseExports.states;
     var ContextOfParse = parseExports.ContextOfParse;

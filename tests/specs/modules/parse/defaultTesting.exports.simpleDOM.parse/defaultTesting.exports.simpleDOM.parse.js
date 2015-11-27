@@ -1,4 +1,4 @@
-var simpleDOM = require('simple-dom');
+var simpleDOM = require('simple-dom-parser');
 describe('defaultTesting.exports.simpleDOM.parse', function () {
     var parseExports = require('default-testing').exports.simpleDOM.parse;
     var statesExports = parseExports.states;

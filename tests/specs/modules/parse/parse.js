@@ -1,6 +1,6 @@
 var defaultLib = require('default-lib');
-var simpleDOMNodes = require('simple-dom').nodes;
-var parse = require('simple-dom').parse;
+var simpleDOMNodes = require('simple-dom-parser').nodes;
+var parse = require('simple-dom-parser').parse;
 var defaultTestingUtils = require('default-testing').utils;
 
 
