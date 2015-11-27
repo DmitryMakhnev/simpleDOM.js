@@ -19,11 +19,10 @@ module.exports = {
             //loader removes code for testing
             {
                 test: /^.*$/,
-                loader: "regexp",
-                rules: [
+                loader: "annotation",
+                annotations: [
                     {
-                        //TODO: [dmitry.makhnev] modify this regexp
-                        'for': /\/\*@defaultTesting.exports\*\/[\w\.=+\-<>,'"/%/\[\];:(){}\s]*\*@\/defaultTesting.exports\*\//g,
+                        'for': 'defaultTesting.exports',
                         'do': ''
                     }
                 ]
@@ -38,8 +37,7 @@ module.exports = {
     plugins: [
         new webpack.ResolverPlugin(
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-        )
-        //,
-        //new webpack.optimize.UglifyJsPlugin()
+        ),
+        new webpack.optimize.UglifyJsPlugin()
     ]
 };
