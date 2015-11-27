@@ -4,7 +4,7 @@
  * parse components
  * */
 
-var simpleDOMNodes = require('./nodes');
+var simpleDOMNodes = require('./nodes/index');
 var reversiveCycle = require('default-lib').reversiveCycle;
 
 /*@DTesting.exports*/
