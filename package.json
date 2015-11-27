@@ -1,8 +1,8 @@
 {
   "name": "simple-dom-parser",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "XML/HTML parser. It parses XML or HTML to simple js objects with micro DOM API",
-  "main": "./src/simple-dom.js.js",
+  "main": "./src/simple-dom-parser.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
