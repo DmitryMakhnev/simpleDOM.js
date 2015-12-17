@@ -78,8 +78,8 @@ describe('processingCommentClose (defaultTesting.exports.simpleDOM.parse.process
                     expect(comment instanceof simpleDOMNodes.Comment).toBeTruthy();
                 });
 
-                it('comment.text is correct', function () {
-                    expect(comment.text).toBe('a');
+                it('comment.nodeValue is correct', function () {
+                    expect(comment.nodeValue).toBe('a');
                 });
             });
 

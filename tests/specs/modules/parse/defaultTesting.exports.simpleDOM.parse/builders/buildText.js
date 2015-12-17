@@ -35,7 +35,7 @@ describe('buildText (defaultTesting.exports.simpleDOM.parse.builders)', function
                 expect(contextOfParse.result.childNodes[0] instanceof simpleDOMNodes.Text).toBeTruthy();
             });
             it('correct Text.text', function () {
-                expect(contextOfParse.result.childNodes[0].text).toBe('hello');
+                expect(contextOfParse.result.childNodes[0].nodeValue).toBe('hello');
             });
         });
 

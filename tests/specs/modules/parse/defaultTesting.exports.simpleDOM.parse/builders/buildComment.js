@@ -39,8 +39,8 @@ describe('buildComment (defaultTesting.exports.simpleDOM.parse.builders)', funct
                 expect(textNode instanceof simpleDOMNodes.Text).toBeTruthy();
             });
 
-            it('textNode.text is correct', function () {
-                expect(textNode.text).toBe('a');
+            it('textNode.nodeValue is correct', function () {
+                expect(textNode.nodeValue).toBe('a');
             });
         });
 
@@ -55,8 +55,8 @@ describe('buildComment (defaultTesting.exports.simpleDOM.parse.builders)', funct
                 expect(comment instanceof simpleDOMNodes.Comment).toBeTruthy();
             });
 
-            it('comment.text is correct', function () {
-                expect(comment.text).toBe('hello');
+            it('comment.nodeValue is correct', function () {
+                expect(comment.nodeValue).toBe('hello');
             });
         });
 

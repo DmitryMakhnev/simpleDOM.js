@@ -7,7 +7,7 @@ var Tag = classyxin.createClass(
         type: 'tag',
         init: function (name, attributes) {
             var tag = this;
-            tag.name = name;
+            tag.tagName = name;
             //TODO: [dmitry.makhnev] todo void attributes
             tag.attributes = attributes || {};
         }

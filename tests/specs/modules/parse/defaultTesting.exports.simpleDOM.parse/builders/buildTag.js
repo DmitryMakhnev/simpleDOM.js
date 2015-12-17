@@ -40,7 +40,7 @@ describe('buildTag (defaultTesting.exports.simpleDOM.parse.builders)', function 
                 expect(contextOfParse.result.childNodes[0] instanceof simpleDOMNodes.Text).toBeTruthy();
             });
             it('correct Text.text', function () {
-                expect(contextOfParse.result.childNodes[0].text).toBe('a');
+                expect(contextOfParse.result.childNodes[0].nodeValue).toBe('a');
             });
         });
         describe('building Tag', function () {
@@ -48,7 +48,7 @@ describe('buildTag (defaultTesting.exports.simpleDOM.parse.builders)', function 
                 expect(contextOfParse.result.childNodes[1] instanceof simpleDOMNodes.Tag).toBeTruthy();
             });
             it('correct Text.text', function () {
-                expect(contextOfParse.result.childNodes[1].name).toBe('br');
+                expect(contextOfParse.result.childNodes[1].tagName).toBe('br');
             });
         });
     });

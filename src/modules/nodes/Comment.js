@@ -6,7 +6,7 @@ var Comment = classyxin.createClass(
     {
         type: 'comment',
         init: function (commentContent) {
-            this.text = commentContent;
+            this.nodeValue = commentContent;
         }
     }
 );

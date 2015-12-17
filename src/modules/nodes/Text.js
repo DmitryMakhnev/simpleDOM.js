@@ -6,7 +6,7 @@ var Text = classyxin.createClass(
     {
         type: 'text',
         init: function (textContent) {
-            this.text = textContent;
+            this.nodeValue = textContent;
         }
     }
 );

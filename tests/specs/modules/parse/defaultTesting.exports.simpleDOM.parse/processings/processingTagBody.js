@@ -68,7 +68,7 @@ describe('processingTagBody (defaultTesting.exports.simpleDOM.parse.processings)
                     expect(textNode instanceof simpleDOMNodes.Text).toBeTruthy();
                 });
                 it('correct textNode.text', function () {
-                    expect(textNode.text).toBe('a');
+                    expect(textNode.nodeValue).toBe('a');
                 });
             });
 
@@ -81,7 +81,7 @@ describe('processingTagBody (defaultTesting.exports.simpleDOM.parse.processings)
                     expect(tag instanceof simpleDOMNodes.Tag).toBeTruthy();
                 });
                 it('correct textNode.text', function () {
-                    expect(tag.name).toBe('div');
+                    expect(tag.tagName).toBe('div');
                 });
                 it('add to contextOfParse.treeStack', function () {
                     var treeStack = contextOfParse.treeStack,

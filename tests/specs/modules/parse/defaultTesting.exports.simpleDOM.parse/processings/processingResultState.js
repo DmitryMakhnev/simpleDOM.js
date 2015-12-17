@@ -43,8 +43,8 @@ describe('processingResultState (defaultTesting.exports.simpleDOM.parse.processi
                     expect(textNode instanceof simpleDOMNodes.Text).toBe(true);
                 });
 
-                it('textNode.text is correct', function () {
-                    expect(textNode.text).toBe('hello');
+                it('textNode.nodeValue is correct', function () {
+                    expect(textNode.nodeValue).toBe('hello');
                 });
 
             });
@@ -79,8 +79,8 @@ describe('processingResultState (defaultTesting.exports.simpleDOM.parse.processi
                     expect(textNode instanceof simpleDOMNodes.Text).toBe(true);
                 });
 
-                it('textNode.text is correct', function () {
-                    expect(textNode.text).toBe('a<div');
+                it('textNode.nodeValue is correct', function () {
+                    expect(textNode.nodeValue).toBe('a<div');
                 });
 
             });
@@ -116,8 +116,8 @@ describe('processingResultState (defaultTesting.exports.simpleDOM.parse.processi
                     expect(textNode instanceof simpleDOMNodes.Text).toBe(true);
                 });
 
-                it('textNode.text is correct', function () {
-                    expect(textNode.text).toBe('a<!--b');
+                it('textNode.nodeValue is correct', function () {
+                    expect(textNode.nodeValue).toBe('a<!--b');
                 });
 
             });

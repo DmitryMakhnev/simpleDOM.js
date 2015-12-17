@@ -322,7 +322,7 @@ function closeTag (contextOfParse) {
 
     while (
         (treeStack.length !== 1)
-        && ((lastTreeStackTag = treeStack.pop()).name !== tagName)
+        && ((lastTreeStackTag = treeStack.pop()).tagName !== tagName)
     ) {
         if (!isHasCollection) {
             isHasCollection = true;

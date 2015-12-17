@@ -33,7 +33,7 @@ describe('simpleDOM.parse', function () {
         });
 
         it('correct name', function () {
-            expect(span.name).toBe('span');
+            expect(span.tagName).toBe('span');
         });
 
         it('attributes is empty', function () {
@@ -59,7 +59,7 @@ describe('simpleDOM.parse', function () {
         });
 
         it('correct name', function () {
-            expect(div.name).toBe('div');
+            expect(div.tagName).toBe('div');
         });
 
         describe('correct attributes', function () {
@@ -142,7 +142,7 @@ describe('simpleDOM.parse', function () {
             expect(select).toBeDefined();
             });
             it('has correct tag name', function () {
-                expect(select.name).toBe('select');
+                expect(select.tagName).toBe('select');
             });
             it('select.childNodes.length is 3', function () {
                 expect(select.childNodes.length).toBe(3);
@@ -155,7 +155,7 @@ describe('simpleDOM.parse', function () {
                 expect(option1).toBeDefined()
             });
             it('has correct tag name', function () {
-                expect(option1.name).toBe('option');
+                expect(option1.tagName).toBe('option');
             });
             it('has correct attribute', function () {
                 expect(option1.attributes.value).toBe('1');
@@ -171,7 +171,7 @@ describe('simpleDOM.parse', function () {
                 expect(option2).toBeDefined()
             });
             it('has correct tag name', function () {
-                expect(option2.name).toBe('option');
+                expect(option2.tagName).toBe('option');
             });
             it('has correct attribute', function () {
                 expect(option2.attributes.value).toBe('2');
@@ -184,7 +184,7 @@ describe('simpleDOM.parse', function () {
                 expect(option3).toBeDefined()
             });
             it('has correct tag name', function () {
-                expect(option3.name).toBe('option');
+                expect(option3.tagName).toBe('option');
             });
             it('has correct attribute', function () {
                 expect(option3.attributes.value).toBe('3');
@@ -216,8 +216,8 @@ describe('simpleDOM.parse', function () {
                 expect(textNode instanceof simpleDOMNodes.Text).toBe(true);
             });
 
-            it('textNode.text is correct', function () {
-                expect(textNode.text).toBe('a');
+            it('textNode.nodeValue is correct', function () {
+                expect(textNode.nodeValue).toBe('a');
             });
 
         });
@@ -233,8 +233,8 @@ describe('simpleDOM.parse', function () {
                 expect(tag instanceof simpleDOMNodes.Tag).toBe(true);
             });
 
-            it('tag.name is correct', function () {
-                expect(tag.name).toBe('div');
+            it('tag.tagName is correct', function () {
+                expect(tag.tagName).toBe('div');
             });
 
         });
@@ -250,8 +250,8 @@ describe('simpleDOM.parse', function () {
                 expect(comment instanceof simpleDOMNodes.Comment).toBe(true);
             });
 
-            it('tag.name is correct', function () {
-                expect(comment.text).toBe('CoMmEnT');
+            it('tag.tagName is correct', function () {
+                expect(comment.nodeValue).toBe('CoMmEnT');
             });
         });
 
@@ -266,8 +266,8 @@ describe('simpleDOM.parse', function () {
                 expect(textNode instanceof simpleDOMNodes.Text).toBe(true);
             });
 
-            it('textNode.text is correct', function () {
-                expect(textNode.text).toBe('b');
+            it('textNode.nodeValue is correct', function () {
+                expect(textNode.nodeValue).toBe('b');
             });
 
         });
@@ -293,8 +293,8 @@ describe('simpleDOM.parse', function () {
                 expect(textNode instanceof simpleDOMNodes.Text).toBe(true);
             });
 
-            it('textNode.text is correct', function () {
-                expect(textNode.text).toBe('a');
+            it('textNode.nodeValue is correct', function () {
+                expect(textNode.nodeValue).toBe('a');
             });
 
         });
@@ -310,8 +310,8 @@ describe('simpleDOM.parse', function () {
                 expect(tag instanceof simpleDOMNodes.Tag).toBe(true);
             });
 
-            it('tag.name is correct', function () {
-                expect(tag.name).toBe('div');
+            it('tag.tagName is correct', function () {
+                expect(tag.tagName).toBe('div');
             });
 
         });
@@ -327,8 +327,8 @@ describe('simpleDOM.parse', function () {
                 expect(textNode instanceof simpleDOMNodes.Text).toBe(true);
             });
 
-            it('textNode.text is correct', function () {
-                expect(textNode.text).toBe('<da');
+            it('textNode.nodeValue is correct', function () {
+                expect(textNode.nodeValue).toBe('<da');
             });
 
         });

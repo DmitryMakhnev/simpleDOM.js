@@ -80,11 +80,11 @@ describe('simpleDOM.nodes', function () {
         });
 
         it('name is define', function () {
-            expect(tag.name).toBeDefined();
+            expect(tag.tagName).toBeDefined();
         });
 
         it('name is \'div\'', function () {
-            expect(tag.name).toBe('div');
+            expect(tag.tagName).toBe('div');
         });
 
         it('attributes is define', function () {
@@ -143,11 +143,11 @@ describe('simpleDOM.nodes', function () {
         });
 
         it('text is define', function () {
-            expect(text.text).toBeDefined();
+            expect(text.nodeValue).toBeDefined();
         });
 
         it('text is \'text content\'', function () {
-            expect(text.text).toBe('text content');
+            expect(text.nodeValue).toBe('text content');
         });
 
         it('parentNode is define', function () {
@@ -183,11 +183,11 @@ describe('simpleDOM.nodes', function () {
         });
 
         it('text is define', function () {
-            expect(comment.text).toBeDefined();
+            expect(comment.nodeValue).toBeDefined();
         });
 
         it('text is \'comment text\'', function () {
-            expect(comment.text).toBe('comment text');
+            expect(comment.nodeValue).toBe('comment text');
         });
 
         it('parentNode is define', function () {

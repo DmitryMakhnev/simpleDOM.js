@@ -47,7 +47,7 @@ describe('closeTag (defaultTesting.exports.simpleDOM.parse.builders)', function 
                 expect(tag).toBeDefined();
             });
             it('has correct name', function () {
-                expect(tag.name).toBe('div');
+                expect(tag.tagName).toBe('div');
             });
             it('has child', function () {
                 expect(tag.childNodes.length).toBe(1);
@@ -60,7 +60,7 @@ describe('closeTag (defaultTesting.exports.simpleDOM.parse.builders)', function 
                 expect(textNode).toBeDefined();
             });
             it('has correct text', function () {
-                expect(textNode.text).toBe('hello');
+                expect(textNode.nodeValue).toBe('hello');
             });
         });
 
@@ -109,7 +109,7 @@ describe('closeTag (defaultTesting.exports.simpleDOM.parse.builders)', function 
                 expect(div).toBeDefined();
             });
             it('has correct name', function () {
-                expect(div.name).toBe('div');
+                expect(div.tagName).toBe('div');
             });
             it('has child', function () {
                 expect(div.childNodes.length).toBe(1);
@@ -122,7 +122,7 @@ describe('closeTag (defaultTesting.exports.simpleDOM.parse.builders)', function 
                 expect(span).toBeDefined();
             });
             it('has correct name', function () {
-                expect(span.name).toBe('span');
+                expect(span.tagName).toBe('span');
             });
             it('has child', function () {
                 expect(span.childNodes.length).toBe(1);
@@ -135,7 +135,7 @@ describe('closeTag (defaultTesting.exports.simpleDOM.parse.builders)', function 
                 expect(textNode).toBeDefined();
             });
             it('has correct text', function () {
-                expect(textNode.text).toBe('hello');
+                expect(textNode.nodeValue).toBe('hello');
             });
         });
 
