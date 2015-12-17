@@ -335,4 +335,19 @@ describe('simpleDOM.parse', function () {
 
     });
 
+    describe('parse with namespaces', function () {
+        var simpleDOMResult = parse('<ui:if><div></div><span></span></ui:if>');
+        var childNodes = simpleDOMResult.childNodes;
+        var ifChilds = childNodes[0].childNodes;
+
+        it('correct count of root childs', function () {
+            expect(childNodes.length).toBe(1);
+        });
+
+        it('correct count of root childs', function () {
+            expect(ifChilds.length).toBe(2);
+        });
+
+    });
+
 });

@@ -64,7 +64,7 @@ describe('processingClosedTagBody (defaultTesting.exports.simpleDOM.parse.proces
             });
 
             it('contextOfParse.textBuffer is correct', function () {
-                expect(contextOfParse.buffer).toBe('');
+                expect(contextOfParse.textBuffer).toBe('');
             });
 
             it('contextOfParse.treeStack is correct', function () {

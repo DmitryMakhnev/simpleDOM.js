@@ -661,7 +661,7 @@ processingsExport.processingClosedTagStart = processings[CLOSED_TAG_START];
 processings[CLOSED_TAG_NAME] = function processingClosedTagName (contextOfParse, char) {
     addCharForBuffer(contextOfParse, char);
 
-    if (isCorrectTagNameStartSymbol(char)) {
+    if (isCorrectTagNameSymbol(char)) {
         contextOfParse.tagName += char;
     } else if (char === '>') {
         closeTag(contextOfParse);

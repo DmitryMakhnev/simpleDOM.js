@@ -1,6 +1,6 @@
 {
   "name": "simple-dom-parser",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "XML/HTML parser. It parses XML or HTML to simple js objects with micro DOM API",
   "main": "./src/simple-dom-parser.js",
   "scripts": {
