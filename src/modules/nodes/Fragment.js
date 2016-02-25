@@ -7,6 +7,11 @@ function fragmentAppendChildNodesProcessing (fragmentChildNode, index, childNode
     nodeTo.childNodes.push(fragmentChildNode);
 }
 
+/**
+ * 
+ * @constructor
+ * @extends {NodeWithChild}
+ */
 var Fragment = classyxin.createClass(
     NodeWithChild,
     {

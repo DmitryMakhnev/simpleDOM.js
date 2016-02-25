@@ -1,5 +1,8 @@
 var classyxin = require('classyxin');
 
+/**
+ * @constructor
+ */
 var Node = classyxin.createClass({
     type: null,
     parentNode: null,

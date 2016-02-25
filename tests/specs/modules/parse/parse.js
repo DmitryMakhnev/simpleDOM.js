@@ -350,4 +350,22 @@ describe('simpleDOM.parse', function () {
 
     });
 
+    describe('parse xml input', function () {
+        var simpleDomResult = parse('<div><input><ui:attr name="data-foo" value="bar" /></input></div>', {isXML: true});
+
+        it('correct result', function () {
+            expect(simpleDomResult.childNodes.length).toBe(1);
+            var div = simpleDomResult.childNodes[0];
+            expect(div.tagName).toBe('div');
+            expect(div.childNodes.length).toBe(1);
+            var input = div.childNodes[0];
+            expect(input.tagName).toBe('input');
+            expect(input.childNodes.length).toBe(1);
+            var attr = input.childNodes[0];
+            expect(attr.tagName).toBe('ui:attr');
+            expect(attr.attributes.name).toBe('data-foo');
+            expect(attr.attributes.value).toBe('bar');
+        });
+    });
+
 });

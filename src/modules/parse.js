@@ -820,10 +820,12 @@ processingsExport.processingResultState = processingResultState;
 /**
  *
  * @param {String} xml
+ * @param {Object} [settings]
+ *      @param {Object} [settings.isXML]
  * @return {Object} simpleDOM
  */
-module.exports = function (xml) {
-    var contextOfParse = new ContextOfParse();
+module.exports = function (xml, settings) {
+    var contextOfParse = new ContextOfParse(settings);
     var i = 0;
     var iMax = xml.length;
     var result;

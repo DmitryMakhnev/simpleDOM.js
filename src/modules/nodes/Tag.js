@@ -1,6 +1,11 @@
 var classyxin = require('classyxin');
 var NodeWithChild = require('./NodeWithChild');
 
+/**
+ * 
+ * @constructor
+ * @extends {NodeWithChild}
+ */
 var Tag = classyxin.createClass(
     NodeWithChild,
     {

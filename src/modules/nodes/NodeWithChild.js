@@ -1,6 +1,11 @@
 var classyxin = require('classyxin');
 var Node = require('./Node');
 
+/**
+ * 
+ * @constructor
+ * @extends {nodes.Node}
+ */
 var NodeWithChild = classyxin.createClass(
     Node,
     {
