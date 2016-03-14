@@ -312,4 +312,41 @@ describe('simpleDOM.nodes', function () {
 
     });
 
+    describe('wrap()', function () {
+
+        describe('base wrap', function () {
+            var parent = new simpleDOMNodes.Tag('div', {id: 'parent'});
+            var child1 = new simpleDOMNodes.Tag('div', {id: 'child1'});
+            var wrappable = new simpleDOMNodes.Tag('div', {id: 'wrapable'});
+            var child3 = new simpleDOMNodes.Tag('div', {id: 'child3'});
+            var wrapper = new simpleDOMNodes.Tag('div', {id: 'wrapper'});
+
+            parent.appendChild(child1);
+            parent.appendChild(wrappable);
+            parent.appendChild(child3);
+
+            wrappable.wrap(wrapper);
+
+            var parentChildNodes = parent.childNodes;
+
+            it('correct first child', function () {
+                expect(parentChildNodes[0]).toBe(child1);
+            });
+
+            it('correct wrapper', function () {
+                expect(parentChildNodes[1]).toBe(wrapper);
+            });
+
+            it('correct last child', function () {
+                expect(parentChildNodes[2]).toBe(child3);
+            });
+
+            it('correct wrappable', function () {
+                expect(parentChildNodes[1].childNodes[0]).toBe(wrappable);
+            });
+
+        });
+
+    });
+
 });

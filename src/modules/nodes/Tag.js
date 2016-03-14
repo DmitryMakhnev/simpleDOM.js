@@ -10,6 +10,7 @@ var Tag = classyxin.createClass(
     NodeWithChild,
     {
         type: 'tag',
+
         init: function (name, attributes) {
             var tag = this;
             tag.tagName = name;
